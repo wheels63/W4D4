@@ -81,7 +81,18 @@ describe Game do
         expect(game.stack2).to eq([1])
       end
     end
+
+    describe "#won?" do
+    # win by moving stack1 to stack3, not breaking any rules
+      it "should return true if the game is won" do
+        game.stack3 = [8,7,6,5,4,3,2,1]
+        expect(game.won?).to eq(true)
+      end
+    end
+
   end
+
+  
 
 
 end
